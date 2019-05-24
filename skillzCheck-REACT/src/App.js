@@ -44,25 +44,33 @@ class App extends Component {
   //   // updated the inputted values of the item in DB. check to see how to leave same values that aren't changing
   // }
 
-  // deleteFromInventory() {
-  //   // remove the selected item from DB
-  // }
+  deleteFromInventory(id) {
+    axios.delete(`/api/products/${id}`).then(response => {
+      console.log(response.data);
+      this.setState({
+        inventory: response.data
+      });
+    });
+  }
 
   render() {
     console.log(this.state.inventory);
     return (
       <div className="App">
         <Header />
-        <Dashboard inventory={this.state.inventory} />
+        <Dashboard
+          inventory={this.state.inventory}
+          delete={this.deleteFromInventory}
+        />
         <Form add={this.addToInventory} />
         {/* <Product
           update={this.updateInventory}
           delete={this.deleteFromInventory}
         /> */}
-        {/* <Switch>
+        <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route path="/form" component={Form} />
-          <Route path="/product/:id" component={Product} />
+          {/* <Route path="/product/:id" component={Product} /> */}
           <Route
             path="*"
             render={() => {
@@ -74,7 +82,7 @@ class App extends Component {
               );
             }}
           />
-        </Switch> */}
+        </Switch>
       </div>
     );
   }

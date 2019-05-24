@@ -3,5 +3,12 @@ import React from "react";
 // import { Switch, Link, Route, NavLink } from "react-router-dom";
 
 export default function Product(props) {
-  return <div>Product</div>;
+  let { e } = props;
+  return (
+    <div>
+      <img src={`${e.img}`} />
+      <h1>{e.name}</h1>
+      <div>{e.price}</div>
+    </div>
+  );
 }

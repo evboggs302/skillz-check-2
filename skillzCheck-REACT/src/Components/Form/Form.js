@@ -14,7 +14,11 @@ export default class Form extends Component {
     this.updateName = this.updateName.bind(this);
     this.updatePrice = this.updatePrice.bind(this);
     this.reset = this.reset.bind(this);
+    this.componentDidUpdate = this.componentDidUpdate.bind(this);
   }
+
+  componentDidUpdate() {}
+  // this.props.get();
 
   updateName(event) {
     let { name } = this.state;
@@ -60,16 +64,13 @@ export default class Form extends Component {
     return (
       <div>
         Form
+        <input placeholder="Name" onChange={event => this.updateName(event)} />
         <input
-          placeholder={`${name}`}
-          onChange={event => this.updateName(event)}
-        />
-        <input
-          placeholder={`${+price}`}
+          placeholder="Price"
           onChange={event => this.updatePrice(event)}
         />
         <input
-          placeholder={`${imgurl}`}
+          placeholder="Image URL"
           onChange={event => this.updateImgUrl(event)}
         />
         <button onClick={() => this.reset()}>Cancel</button>
@@ -80,3 +81,5 @@ export default class Form extends Component {
     );
   }
 }
+
+//https://i.kinja-img.com/gawker-media/image/upload/s--HqfzgkTd--/c_scale,f_auto,fl_progressive,q_80,w_800/wp2qinp6fu0d8guhex9v.jpg
