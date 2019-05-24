@@ -7,7 +7,7 @@ module.exports = {
   },
 
   postProd: (req, res) => {
-    const { name, price, img } = req.body;
+    const { name, price, img } = req.params;
     const db = req.app.get("db");
     db.post_prods([name, price, img])
       .then(product => {

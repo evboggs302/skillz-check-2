@@ -18,25 +18,25 @@ export default class Form extends Component {
 
   updateName(event) {
     let { name } = this.state;
-    name = event.target.value;
+    name = [event.target.value];
     this.setState({
-      name: name
+      name: `${name}`
     });
   }
 
   updatePrice(event) {
     let { price } = this.state;
-    price = event.target.value;
+    price = [event.target.value];
     this.setState({
-      price: price
+      price: +price
     });
   }
 
   updateImgUrl(event) {
     let { imgurl } = this.state;
-    imgurl = event.target.value;
+    imgurl = [event.target.value];
     this.setState({
-      imgurl: imgurl
+      imgurl: `${imgurl}`
     });
   }
 
@@ -54,20 +54,26 @@ export default class Form extends Component {
 
   render() {
     let { name, price, imgurl } = this.state;
+    console.log("name= ", name);
+    console.log("price= ", price);
+    console.log("img= ", imgurl);
     return (
       <div>
         Form
-        <input placeholder="Name" onChange={event => this.updateName(event)} />
         <input
-          placeholder="Price"
+          placeholder={`${name}`}
+          onChange={event => this.updateName(event)}
+        />
+        <input
+          placeholder={`${+price}`}
           onChange={event => this.updatePrice(event)}
         />
         <input
-          placeholder="Image URL"
+          placeholder={`${imgurl}`}
           onChange={event => this.updateImgUrl(event)}
         />
-        <button onClick={this.reset()}>Cancel</button>
-        <button onClick={this.props.add(name, price, imgurl)}>
+        <button onClick={() => this.reset()}>Cancel</button>
+        <button onClick={() => this.props.add(name, price, imgurl)}>
           Add to Inventory
         </button>
       </div>

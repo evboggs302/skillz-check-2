@@ -19,5 +19,3 @@ export default function Dashboard(props) {
     </div>
   );
 }
-
-let hello = () => console.log("hello");

@@ -20,7 +20,7 @@ massive(process.env.CONNECTION_STRING).then(db => {
 });
 
 app.get("/api/products", getProds);
-app.post("/api/products", postProd);
+app.post("/api/products/:name/:price/:img", postProd);
 app.put("/api/products/name/:id", updateProdName);
 app.put("/api/products/price/:id", updateProdPrice);
 app.put("/api/products/image/:id", updateProdImage);
