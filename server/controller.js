@@ -1,7 +1,7 @@
 module.exports = {
   getProds: (req, res) => {
     const db = req.app.get("db");
-    db.select.get_prods().then(product => {
+    db.get_prods().then(product => {
       res.status(200).send(product);
     });
   },

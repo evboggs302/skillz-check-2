@@ -1,23 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Form from "./Components/Form/Form";
 import Header from "./Components/Header/Header";
 import Product from "./Components/Product/Prod";
 
-function App() {
-  return (
-    <div>
-      <header>
-        <Header />
-      </header>
+class App extends Component {
+  render() {
+    return (
       <div>
-        <Dashboard />
-        <Product />
-        <Form />
+        <header>
+          <Header />
+        </header>
+        <div>
+          <Dashboard />
+          <Product />
+          <Form />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
