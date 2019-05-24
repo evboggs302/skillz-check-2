@@ -1,7 +1,6 @@
 {
   "name": "skillz-check-2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
@@ -15,5 +14,14 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evboggs302/skillz-check-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evboggs302/skillz-check-2/issues"
+  },
+  "homepage": "https://github.com/evboggs302/skillz-check-2#readme",
+  "description": ""
 }
