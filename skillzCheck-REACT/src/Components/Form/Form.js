@@ -10,39 +10,66 @@ export default class Form extends Component {
       price: 0,
       imgurl: ""
     };
+    this.updateImgUrl = this.updateImgUrl.bind(this);
+    this.updateName = this.updateName.bind(this);
+    this.updatePrice = this.updatePrice.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
-  // updateName() {
-  //   //update state.name to the inputted value
-  //   //onChange={() => this.updateName()}
-  // }
+  updateName(event) {
+    let { name } = this.state;
+    name = event.target.value;
+    this.setState({
+      name: name
+    });
+  }
 
-  // updatePrice() {
-  //   //update state.price to the inputted value
-  //   //onChange={() => this.updatePrice()}
-  // }
+  updatePrice(event) {
+    let { price } = this.state;
+    price = event.target.value;
+    this.setState({
+      price: price
+    });
+  }
 
-  // updateImgUrl() {
-  //   //update state.imgurl to the inputted value
-  //   //onChange={() => this.updateImgUrl()}
-  // }
+  updateImgUrl(event) {
+    let { imgurl } = this.state;
+    imgurl = event.target.value;
+    this.setState({
+      imgurl: imgurl
+    });
+  }
 
-  // reset() {
-  //   //set state back to empty
-  // }
+  reset() {
+    let { name, price, imgurl } = this.state;
+    name = "";
+    price = 0;
+    imgurl = "";
+    this.setState({
+      name: name,
+      price: price,
+      imgurl: imgurl
+    });
+  }
 
   render() {
     let { name, price, imgurl } = this.state;
-    //onClick={this.reset()}
-    //onClick={this.props.add(name, price, imgurl)}
     return (
       <div>
         Form
-        <input placeholder="Name" />
-        <input placeholder="Price" />
-        <input placeholder="Image URL" />
-        <button>Cancel</button>
-        <button>Add to Inventory</button>
+        <input placeholder="Name" onChange={event => this.updateName(event)} />
+        <input
+          placeholder="Price"
+          onChange={event => this.updatePrice(event)}
+        />
+        <input
+          placeholder="Image URL"
+          onChange={event => this.updateImgUrl(event)}
+        />
+        <button onClick={this.reset()}>Cancel</button>
+        <button onClick={this.props.add(name, price, imgurl)}>
+          Add to Inventory
+        </button>
       </div>
     );
   }

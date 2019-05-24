@@ -25,7 +25,6 @@ class App extends Component {
 
   getInventory() {
     axios.get("/api/products").then(response => {
-      console.log(response.data);
       this.setState({
         inventory: response.data
       });
@@ -51,15 +50,16 @@ class App extends Component {
   // }
 
   render() {
+    console.log(this.state.inventory);
     return (
       <div className="App">
         <Header />
         <Dashboard inventory={this.state.inventory} />
-        {/* <Form add={this.addToInventory} />
-        <Product
+        <Form add={this.addToInventory} />
+        {/* <Product
           update={this.updateInventory}
-          delete={this.deleteFromInventory}
-        /> */}
+          delete={this.deleteFromInventory} */}
+        />
         {/* <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route path="/form" component={Form} />
