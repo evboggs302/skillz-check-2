@@ -11,7 +11,39 @@ export default class Form extends Component {
       imgurl: ""
     };
   }
+
+  // updateName() {
+  //   //update state.name to the inputted value
+  //   //onChange={() => this.updateName()}
+  // }
+
+  // updatePrice() {
+  //   //update state.price to the inputted value
+  //   //onChange={() => this.updatePrice()}
+  // }
+
+  // updateImgUrl() {
+  //   //update state.imgurl to the inputted value
+  //   //onChange={() => this.updateImgUrl()}
+  // }
+
+  // reset() {
+  //   //set state back to empty
+  // }
+
   render() {
-    return <div>Form</div>;
+    let { name, price, imgurl } = this.state;
+    //onClick={this.reset()}
+    //onClick={this.props.add(name, price, imgurl)}
+    return (
+      <div>
+        Form
+        <input placeholder="Name" />
+        <input placeholder="Price" />
+        <input placeholder="Image URL" />
+        <button>Cancel</button>
+        <button>Add to Inventory</button>
+      </div>
+    );
   }
 }

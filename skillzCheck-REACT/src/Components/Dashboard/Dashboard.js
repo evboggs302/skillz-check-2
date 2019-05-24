@@ -6,7 +6,7 @@ export default function Dashboard(props) {
   return (
     <div>
       Dashboard
-      <div>{props.iventory}</div>
+      <div>{props.inventory}</div>
     </div>
   );
 }

@@ -14,6 +14,9 @@ class App extends Component {
       inventory: []
     };
     this.getInventory = this.getInventory.bind(this);
+    // this.addToInventory = this.addToInventory.bind(this);
+    // this.updateInventory = this.updateInventory.bind(this);
+    // this.deleteFromInventory = this.deleteFromInventory.bind(this);
   }
 
   componentDidMount() {
@@ -29,14 +32,34 @@ class App extends Component {
     });
   }
 
+  // addToInventory(name, price, imgurl) {
+  //   // add inputted values as new item in DB
+  //   axios.post("/api/products").then(response => {
+  //     console.log(response.data);
+  //     this.setState({
+  //       inventory: response.data
+  //     });
+  //   });
+  // }
+
+  // updateInventory() {
+  //   // updated the inputted values of the item in DB. check to see how to leave same values that aren't changing
+  // }
+
+  // deleteFromInventory() {
+  //   // remove the selected item from DB
+  // }
+
   render() {
     return (
       <div className="App">
         <Header />
         <Dashboard inventory={this.state.inventory} />
-        <Form />
-        <Product />
-
+        {/* <Form add={this.addToInventory} />
+        <Product
+          update={this.updateInventory}
+          delete={this.deleteFromInventory}
+        /> */}
         {/* <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route path="/form" component={Form} />
