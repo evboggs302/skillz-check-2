@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
+import { Switch, Link, Route, NavLink } from "react-router-dom";
 
-export default class Product extends Component {
-  render() {
-    return <div>Product</div>;
-  }
+export default function Product(props) {
+  return <div>Product</div>;
 }

@@ -21,9 +21,9 @@ massive(process.env.CONNECTION_STRING).then(db => {
 
 app.get("/api/products", getProds);
 app.post("/api/products", postProd);
-app.put("/api/products/name/:prod_id", updateProdName);
-app.put("/api/products/price/:prod_id", updateProdPrice);
-app.put("/api/products/image/:prod_id", updateProdImage);
-app.delete("/api/products/:prod_id", deleteProd);
+app.put("/api/products/name/:id", updateProdName);
+app.put("/api/products/price/:id", updateProdPrice);
+app.put("/api/products/image/:id", updateProdImage);
+app.delete("/api/products/:id", deleteProd);
 
 app.listen(port, () => console.log(`listening on port: ${port}`));

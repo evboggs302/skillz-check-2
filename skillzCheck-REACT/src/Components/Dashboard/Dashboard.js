@@ -1,8 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
+import { Switch, Link, Route, NavLink } from "react-router-dom";
 
-export default class Dashboard extends Component {
-  render() {
-    return <div>Dashbaord</div>;
-  }
+export default function Dashboard(props) {
+  return (
+    <div>
+      Dashboard
+      <div>{props.iventory}</div>
+    </div>
+  );
 }

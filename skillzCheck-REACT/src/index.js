@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { HashRouter } from "react-router-dom";
-import { lstat } from "fs";
 
 ReactDOM.render(
   <HashRouter>
